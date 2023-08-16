@@ -19,7 +19,7 @@ jobs:
     outputs:
       build_number: ${{ steps.increment_build_number.outputs.result }}
     steps:
-      - name: Increment Github Build Version ${{ env.BUILD_NUMBER }}
+      - name: Increment Github Build Version ${{ vars.BUILD_NUMBER }}
         id: increment_build_number
         if: ${{ !inputs.build_number }}
         uses: actions/github-script@v6
