@@ -29,6 +29,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            console.log("hola mi amor")
             return 777777788889999
       - name: DEMO ${{ steps.increment_build_number.outputs.result }}
         run: |
