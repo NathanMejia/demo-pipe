@@ -29,6 +29,13 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const { owner, repo } = context.repo;
+            github.request('PATCH /repos/{owner}/{repo}/actions/variables/{name}', {
+                owner,
+                repo,
+                name: 'BUILD_NUMBER',
+                value: '999999',
+              });
             return 666
       - name: DEMO ${{ steps.increment_build_number.outputs.result }}
         run: |
