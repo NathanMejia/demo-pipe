@@ -74,17 +74,12 @@ jobs:
 
             try {
               const buildNumber = await bumpBuildNumber();
-
-              await createTag(APP_NAME, APP_SCHEME, buildNumber);
-
               return buildNumber;
             } catch (error) {
               if (!error?.response?.data?.message.includes("Reference already exists")) {
                 throw error;
               }
               const buildNumber = await bumpBuildNumber();
-
-              await createTag(APP_NAME, APP_SCHEME, buildNumber);
 
               return buildNumber;
             }
