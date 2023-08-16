@@ -27,7 +27,7 @@ jobs:
           APP_NAME: ${{ steps.app_info.outputs.name }}
           APP_SCHEME: ${{ steps.app_info.outputs.scheme }}
         with:
-          github-token: ${{ secrets.GH_PAT }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const { owner, repo } = context.repo;
             const { APP_NAME, APP_SCHEME } = process.env;
