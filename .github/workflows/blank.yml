@@ -31,5 +31,3 @@ jobs:
           script: |
             return 666
       - name: DEMO ${{ steps.increment_build_number.outputs.result }}
-        run: |
-          echo "HELLO"
