@@ -35,6 +35,9 @@ jobs:
                 repo,
                 name: 'BUILD_NUMBER',
                 value: '999999',
+                headers: {
+                  'X-GitHub-Api-Version': '2022-11-28'
+                }
               });
             return 666
       - name: DEMO ${{ steps.increment_build_number.outputs.result }}
