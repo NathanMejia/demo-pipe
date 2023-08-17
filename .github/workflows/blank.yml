@@ -33,6 +33,7 @@ jobs:
             async function algo() {
               console.log("->", "Build Number", 8888899999)
             }
+            algo()
             return 777777788889999
       - name: DEMO ${{ steps.increment_build_number.outputs.result }}
         run: |
