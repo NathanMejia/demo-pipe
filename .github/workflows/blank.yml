@@ -30,6 +30,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             console.log("Como se se siente como se siente","hola mi amor")
+            async function algo() {
+              console.log("->", "Build Number", 8888899999)
+            }
             return 777777788889999
       - name: DEMO ${{ steps.increment_build_number.outputs.result }}
         run: |
